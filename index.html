@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Healthy Lifestyle</title>
+	<meta name="keywords"  content="health" />
+
+	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="examples.css" />
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900" rel="stylesheet">
+
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.easings.min.js"></script>
+
+	<script type="text/javascript" src="fullpage.parallax.limited.min.js?v=3"></script>
+	<script type="text/javascript" src="jquery.fullpage.extensions.min.js"></script>
+
+	<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-94005074-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+	<script type="text/javascript">
+	$(document).ready(function() {
+
+		// Initializing fullpage.js
+		initialize(false);
+
+		function initialize(hasScrollBar){
+			$('#myContainer').fullpage({
+				anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage'],
+				menu: '#menu',
+				slidesNavigation: true,
+				parallax: true,
+				parallaxKey: 'YWx2YXJvdHJpZ28uY29tXzlNZGNHRnlZV3hzWVhnPTFyRQ==',
+				parallaxOptions: {
+					type: 'reveal',
+					percentage: 62,
+					property: 'translate'
+				},
+				scrollingSpeed: 700,
+				autoScrolling: true,
+				scrollBar: hasScrollBar,
+				fitToSection:false
+			});
+		}
+
+		$('#turnOn').click(function(){
+			$(this).addClass('active').siblings().removeClass('active');
+			$.fn.fullpage.parallax.init();
+		});
+
+		$('#turnOff').click(function(){
+			$(this).addClass('active').siblings().removeClass('active');
+			$.fn.fullpage.parallax.destroy();
+		});
+
+		// Applying the different options when changing the select boxes
+		$("select").change(function (){
+			var fullPageOption = $(this).data('option');
+			var value = $(this).val();
+
+			if(fullPageOption === 'offset'){
+				$.fn.fullpage.parallax.setOption('offset', value);
+			}
+
+			else if(fullPageOption === 'type'){
+				$.fn.fullpage.parallax.setOption('type', value);
+			}
+
+			else if(fullPageOption === 'autoScrolling'){
+				$.fn.fullpage.setAutoScrolling(value === 'true');
+			}
+
+			// scrollBar
+			// Because there's no method `setScrollBar` we have to destryo and initialice fullPage.js again
+			// but this time we'll initialice it again with the scrollBar:true option
+			else{
+				$.fn.fullpage.destroy('all');
+				initialize(value === 'true');
+			}
+		});
+	});
+	</script>
+
+</head>
+<body>
+<div id="myContainer">
+
+<div class="section" id="section1">
+		<div class="fp-bg" id="section2"></div>
+		<div class="intro">
+			<h1>HEALTHY LIFESTYLE</h1>
+			<p>СOLLECTION OF USEFUL ARTICLES ABOUT HEALTH</p>
+		</div>
+	</div>
+
+	<div class="section" id="section2">
+		<div class="slide" id="slide1-1">
+	        <div class="fp-bg"></div>
+			<h1 class="good_habbits">HABBITS</h1>
+			<p class="p_habbits">HABITS ARE DIVIDED INTO TWO GROUPS: GOOD AND BAD. TO GOOD HABITS ARE INCLUDE SUCH AS: HEALTHY SNAKING, POSITIVE THINKING, SPORTS. TO BAD HABITS ARE INCLUDE SUCH AS: SNAKING NON-SOP, EVEN WHEN NOT-HUNGRY, SPENDING TOO MUCH TIME ON THE COUCH WATCHING TV, SMOKING CIGARETTES, DRUGS, DRINKING TOO MUCH ALCOHOL, EATING FAST FOOD, DRINKING SODA.<br><br>Good and bad habbits you can see right.
+		</div>
+		<div class="slide" id="slide1-2">
+			<div class="fp-bg"></div>
+
+				<h1 class="good_habbits">GOOD HABBITS</h1>
+				<p class="p_habbits"><b>Healthy snaking.</b>Food is a key element of our good health. Eating healthy, nutritious and vitamin-rich products can improve your health. Fruit and vegetables are natural resources of vitamins A, B, C and E and other useful substances. Bread, dairy products, nuts and low-fat meat give you a large amount of energy and nutritious elements.<br><br><b>Positive thinking.</b>A lot of people do not consider their emotions as a health factor. Being an optimist allows you to live more happily and easily cope with difficulties and problems. Positive emotions, smiling and laughing prolong your life and let you avoid stress.<br><br><b>Sports.</b>Visit fitness club, go jogging, walk much, swim, go cycling or roller-skating or just dance. Doctors say that regular moderate physical activity is necessary for our body because it protects us from strokes and heart diseases, flue and obesity.</p>
+
+		<p class="p_habbits">
+		</div>
+		<div class="slide" id="slide1-3">
+			<div class="fp-bg"></div>
+
+				<h1 class="bad_habbits">BAD HABBITS</h1>
+				<p class="p_habbits"><b>Snaking non-stop, even non-hungry:</b>
+
+<b>Why It's Dangerous:</b> Losing touch with your body's natural hunger and satisfaction signals can lead to chronic overeating and unhealthy extra pounds that can lead to diabetes, heart disease, and other serious conditions. If it's junk foods you snack on, you're also flooding your body with unhealthy ingredients.<br><br>
+
+<b>Why You Should Stop:</b> With determination, anyone can fix bad eating habits, and get to a healthier, more natural weight. By paying attention to your hunger signals and switching to healthy snacks, you can boost nutrition, control cravings, lose weight, and avoid energy slumps. Your weight will fall to a healthier level, and you'll replace unhealthy trans and saturated fat, sugar, refined carbohydrates, and extra sodium with more nutritious fare.</p>
+
+		</div>
+	</div>
+	
+	<!--<div class="section" id="section3">
+		<div class="slide" id="slide3-1">
+			<div class="fp-bg"></div>
+			<div class="intro">
+				<h1>TAKE CONTROL</h1>
+				<p>Totally configurable.</p>
+				<p>For sections & slides! </p>
+			</div>
+		</div>
+		<div class="slide" id="slide3-2">
+			<div class="fp-bg"></div>
+			<div class="intro">
+				<h1>GUARRANTEE</h1>
+				<p>30 days money back guarratee if no domain was activated.</p>
+			</div>
+		</div>
+		<div class="slide" id="slide3-3">
+			<div class="intro">
+				<div class="fp-bg"></div>
+				<h1>TRUSTED</h1>
+				<p>Join thoudands of other developers who trusted fullPage.js extensions!</p>
+			</div>
+		</div>
+		<div class="slide" id="slide3-4">
+			<div class="fp-bg"></div>
+			<div class="intro">
+				<h1>DOCUMENTED</h1>
+				<p>If fullPage.js is known for one thing it's for its great documentation!</p>
+			</div>
+		</div>
+	</div>
+	<div class="section" id="section4">
+		<div class="fp-bg"></div>
+		<div class="intro">
+			<h1>IMPRESS</h1>
+			<p>Take it to the next level!</p>
+		</div>
+	</div>
+</div>
+<input type="hidden" id="_4" value="3" />-->
+
+</body>
+</html>
